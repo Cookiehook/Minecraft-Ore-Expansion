@@ -1,0 +1,16 @@
+[
+{
+  "modid": "oreexpansion",
+  "name": "Ore Expansion",
+  "description": "Adding overworld ores to the Nether and End!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Cookiehook"],
+  "credits": "My kettle, for providing much tea...",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
