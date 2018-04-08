@@ -18,31 +18,33 @@ public class BlockEndOre extends BlockBaseOre {
 		this(null, blockName, 1, 0, 0, 0);
 	}
 
+	/**
+	 * When broken, with a 1/10 chance, teleport the player to a random safe location in a 16 * 16 * 16 area
+	 * around the broken block.
+	 */
 	@Override
-	public void harvestBlock(World world, EntityPlayer player, int p_149636_3_, int p_149636_4_, int p_149636_5_, int p_149636_6_) {
-		super.harvestBlock(world, player, p_149636_3_, p_149636_4_, p_149636_5_, p_149636_6_);
+	public void harvestBlock(World world, EntityPlayer player, int posX, int posY, int posZ, int p_149636_6_) {
+		super.harvestBlock(world, player, posX, posY, posZ, p_149636_6_);
 		Random rand = new Random();
-
 		if (rand.nextInt(100) > 90) {
 			if (!world.isRemote) {
 				boolean teleported = false;
 
+				// Make 16 attempts to find a new X / Z location
 				for (int i = 1; i <= 16; i++) {
-					int posX = (int) player.posX;
-					int posY = (int) player.posY;
-					int posZ = (int) player.posZ;
-
 					posX = posX + rand.nextInt(16) - 8;
 					posZ = posZ + rand.nextInt(16) - 8;
-
+					
+					// For the chosen X / Z position, loop through Y -8 to Y + 8
 					for (int j = posY - 8; j <= posY + 8; j++) {
 						posY = j;
 						Block groundBlock = world.getBlock(posX, posY - 1, posZ);
 						Block footBlock = world.getBlock(posX, posY, posZ);
 						Block headBlock = world.getBlock(posX, posY + 1, posZ);
 
+						// Check that the chosen location is safe to teleport to
 						if (groundBlock.isBlockNormalCube() && footBlock == Blocks.air && headBlock == Blocks.air) {
-							player.setPositionAndUpdate(posX, posY, posZ);
+							player.setPositionAndUpdate(posX + 0.5, posY, posZ + 0.5);
 							world.playSoundAtEntity(player, "mob.endermen.portal", 1.0F, 1.0F);
 							teleported = true;
 							break;
@@ -53,5 +55,6 @@ public class BlockEndOre extends BlockBaseOre {
 				}
 			}
 		}
+
 	}
 }
