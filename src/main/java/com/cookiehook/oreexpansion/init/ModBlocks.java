@@ -9,24 +9,24 @@ import net.minecraft.init.Items;
 
 public class ModBlocks {
 
-	private static Block nether_coal_ore = new BlockNetherOre(Items.coal, "nether_coal_ore", 1, 0, 0, 2);
-	private static Block nether_iron_ore = new BlockNetherOre("nether_iron_ore");
-	private static Block nether_gold_ore = new BlockNetherOre("nether_gold_ore");
-	private static Block nether_redstone_ore = new BlockNetherOre(Items.redstone, "nether_redstone_ore", 4, 1, 1, 5);
-	private static Block nether_lapis_ore = new BlockNetherOre(Items.dye, "nether_lapis_ore", 4, 4, 2, 5);
-	private static Block nether_diamond_ore = new BlockNetherOre(Items.diamond, "nether_diamond_ore", 1, 0, 3, 7);
-	private static Block nether_emerald_ore = new BlockNetherOre(Items.emerald, "nether_emerald_ore", 1, 0, 3, 7);
+	public static Block nether_coal_ore = new BlockNetherOre(Items.coal, "nether_coal_ore", 1, 0, 0, 2);
+	public static Block nether_iron_ore = new BlockNetherOre("nether_iron_ore");
+	public static Block nether_gold_ore = new BlockNetherOre("nether_gold_ore");
+	public static Block nether_redstone_ore = new BlockNetherOre(Items.redstone, "nether_redstone_ore", 4, 1, 1, 5);
+	public static Block nether_lapis_ore = new BlockNetherOre(Items.dye, "nether_lapis_ore", 4, 4, 2, 5);
+	public static Block nether_diamond_ore = new BlockNetherOre(Items.diamond, "nether_diamond_ore", 1, 0, 3, 7);
+	public static Block nether_emerald_ore = new BlockNetherOre(Items.emerald, "nether_emerald_ore", 1, 0, 3, 7);
 
-	private static Block end_coal_ore = new BlockEndOre(Items.coal, "end_coal_ore", 1, 0, 0, 2);
-	private static Block end_iron_ore = new BlockEndOre("end_iron_ore");
-	private static Block end_gold_ore = new BlockEndOre("end_gold_ore");
-	private static Block end_redstone_ore = new BlockEndOre(Items.redstone, "end_redstone_ore", 4, 1, 1, 5);
-	private static Block end_lapis_ore = new BlockEndOre(Items.dye, "end_lapis_ore", 4, 4, 2, 5);
-	private static Block end_diamond_ore = new BlockEndOre(Items.diamond, "end_diamond_ore", 1, 0, 3, 7);
-	private static Block end_emerald_ore = new BlockEndOre(Items.emerald, "end_emerald_ore", 1, 0, 3, 7);
+	public static Block end_coal_ore = new BlockEndOre(Items.coal, "end_coal_ore", 1, 0, 0, 2);
+	public static Block end_iron_ore = new BlockEndOre("end_iron_ore");
+	public static Block end_gold_ore = new BlockEndOre("end_gold_ore");
+	public static Block end_redstone_ore = new BlockEndOre(Items.redstone, "end_redstone_ore", 4, 1, 1, 5);
+	public static Block end_lapis_ore = new BlockEndOre(Items.dye, "end_lapis_ore", 4, 4, 2, 5);
+	public static Block end_diamond_ore = new BlockEndOre(Items.diamond, "end_diamond_ore", 1, 0, 3, 7);
+	public static Block end_emerald_ore = new BlockEndOre(Items.emerald, "end_emerald_ore", 1, 0, 3, 7);
 	
-	private static Block end_quartz_ore = new BlockEndOre(Items.quartz, "end_quartz_ore", 1, 0, 2, 5);
-	private static Block overworld_quartz_ore = new BlockEndOre(Items.quartz, "overworld_quartz_ore", 1, 0, 2, 5);
+	public static Block end_quartz_ore = new BlockEndOre(Items.quartz, "end_quartz_ore", 1, 0, 2, 5);
+	public static Block overworld_quartz_ore = new BlockEndOre(Items.quartz, "overworld_quartz_ore", 1, 0, 2, 5);
 
 	public static void register() {
 		GameRegistry.registerBlock(nether_coal_ore, nether_coal_ore.getUnlocalizedName().substring(5));
