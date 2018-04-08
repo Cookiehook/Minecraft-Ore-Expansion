@@ -3,6 +3,7 @@ package com.cookiehook.oreexpansion.blocks;
 import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -19,14 +20,14 @@ public class BlockEndOre extends BlockBaseOre {
 	}
 
 	/**
-	 * When broken, with a 1/10 chance, teleport the player to a random safe location in a 16 * 16 * 16 area
-	 * around the broken block.
+	 * When broken, with a 1/10 chance, teleport the player to a random safe
+	 * location in a 16 * 16 * 16 area around the broken block.
 	 */
 	@Override
 	public void harvestBlock(World world, EntityPlayer player, int posX, int posY, int posZ, int p_149636_6_) {
 		super.harvestBlock(world, player, posX, posY, posZ, p_149636_6_);
 		Random rand = new Random();
-		if (rand.nextInt(100) > 90) {
+		if (rand.nextInt(100) > 90 && !EnchantmentHelper.getSilkTouchModifier(player)) {
 			if (!world.isRemote) {
 				boolean teleported = false;
 
@@ -34,7 +35,7 @@ public class BlockEndOre extends BlockBaseOre {
 				for (int i = 1; i <= 16; i++) {
 					posX = posX + rand.nextInt(16) - 8;
 					posZ = posZ + rand.nextInt(16) - 8;
-					
+
 					// For the chosen X / Z position, loop through Y -8 to Y + 8
 					for (int j = posY - 8; j <= posY + 8; j++) {
 						posY = j;
@@ -55,6 +56,5 @@ public class BlockEndOre extends BlockBaseOre {
 				}
 			}
 		}
-
 	}
 }

@@ -27,7 +27,7 @@ public class BlockBaseOre extends BlockOre {
 		this.minXP = minXP;
 		this.maxXP = maxXP;
 		this.setBlockName(blockName).setBlockTextureName(Reference.MOD_ID + ":" + blockName);
-		this.setHardness(3.0F).setResistance(5.0F).setCreativeTab(CreativeTabs.tabBlock);
+		this.setHardness(3.0F).setResistance(3.0F).setCreativeTab(CreativeTabs.tabBlock);
 	}
 
 	@Override
